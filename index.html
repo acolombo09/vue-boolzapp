@@ -20,10 +20,10 @@
   <header>
   </header>
   <div id="app">
-    <main class="border border-success my-4 mx-auto">
-      <div class="container-fluid gx-0 border border-info">
-        <div class="row flex-row border border-warning gx-0">
-          <div class="col-md-4 d-flex flex-column contacts-sidebar border border-danger">
+    <main class="my-4 mx-auto">
+      <div class="container-fluid gx-0">
+        <div class="row flex-row gx-0">
+          <div class="col-md-4 d-flex flex-column contacts-sidebar">
             <div class="header bg-white">
               <div class="user-info">
                 <div class="user-img">
@@ -39,6 +39,7 @@
                 <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
               </div>
             </div>
+            <!-- banner notifiche -->
             <div class="notifications-banner">
               <i class="fa-solid fa-bell-slash" style="color: #8edafc;"></i>
               <div class="notifications-text">
@@ -46,12 +47,17 @@
                 <a href="#">Attiva notifiche desktop</a>
               </div>
             </div>
+            <!-- form con search bar-->
             <div class="search-container">
-              <div class="input">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholder="Cerca o inizia una nuova chat  ">
+              <div class="input input-group">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
+                  aria-label="Username" aria-describedby="basic-addon1">
               </div>
             </div>
+            <!-- chat list -->
             <div class="contacts-list bg-white">
               <div class="chat-box active">
                 <div class="img-box">
@@ -167,7 +173,9 @@
               </div>
             </div>
           </div>
-          <div class="col-md-8 d-flex flex-column conversation-viewport border border-danger">
+          <!-- container destro/principale -->
+          <div class="col-md-8 d-flex flex-column conversation-viewport">
+            <!-- chat navbar -->
             <div class="conversation-navbar">
               <div class="header bg-white">
                 <div class="user-info">
@@ -186,17 +194,28 @@
                 </div>
               </div>
             </div>
+            <!-- container chat in utilizzo -->
             <div class="conversation-container">
               <div class="message-div message-sent">
-                <p>Hai portato a spasso il cane?<br><span>15:30</span></p>
+                <div class="message-parameters">
+                  <p class="message-text">Hai portato a spasso il cane?</p>
+                  <p class="message-time">15:30</p>
+                </div>
               </div>
               <div class="message-div message-sent">
-                <p>Ricordati di stendere i panni<br><span>15:50</span></p>
+                <div class="message-parameters">
+                  <p class="message-text">Ricordati di stendere i panni</p>
+                  <p class="message-time">15:50</p>
+                </div>
               </div>
               <div class="message-div message-received">
-                <p>Tutto fatto!<br><span>16:15</span></p>
+                <div class="message-parameters">
+                  <p class="message-text">Tutto fatto!</p>
+                  <p class="message-time">16:15</p>
+                </div>
               </div>
             </div>
+            <!-- sezione invio messaggio -->
             <div class="conversation-message">
               <div class="emoji">
                 <i class="fa-regular fa-face-grin"></i>
