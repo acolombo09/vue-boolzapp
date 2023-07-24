@@ -1,0 +1,27 @@
+body{
+  position: relative;
+  background-image: url(../img/bgy.png);
+}
+
+main{
+  width: 80%;
+  height: 100vh;
+}
+
+.contacts-sidebar{
+  max-height: 100%;
+}
+
+.conversation-viewport{
+  max-height: 100%;
+}
+
+.contacts-list{
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.conversation-container{
+  flex-grow: 1;
+  overflow: auto;
+}

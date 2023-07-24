@@ -14,11 +14,52 @@
   <!-- My css link -->
   <link rel="stylesheet" href="css/style.css">
 
-  <title>DRAFT</title>
+  <title>Vue Boolzap</title>
 </head>
 <body>
+  <header>
+  </header>
   <div id="app">
-    
+    <main class="border border-success my-4 mx-auto">
+      <div class="container-fluid border border-info">
+        <div class="row flex-row border border-warning">
+          <div class="col-md-4 d-flex flex-column contacts-sidebar border border-danger">
+            <div class="profile-navbar">
+              <div class="card">
+                <div class="card-body">
+                  This is some text within a card body.
+                </div>
+              </div>
+            </div>
+            <div class="notifications-banner">
+              <div class="card">
+                <div class="card-body">
+                  This is some text within a card body.
+                </div>
+              </div>
+            </div>
+            <div class="contacts-search input-group">
+              <input type="text" class="form-control form-input" 
+                placeholder="&#128269; Cerca o inizia una nuova chat" aria-label="Cerca">
+            </div>
+            <div class="contacts-list">
+              <div class="card">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">An item</li>
+                  <li class="list-group-item">A second item</li>
+                  <li class="list-group-item">A third item</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8 d-flex flex-column conversation-viewport border border-danger">
+            <div class="conversation-navbar"></div>
+            <div class="conversation-container"></div>
+            <div class="conversation-message"></div>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
 
   <!-- My JS file -->
