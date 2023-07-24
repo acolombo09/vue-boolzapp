@@ -21,47 +21,196 @@
   </header>
   <div id="app">
     <main class="border border-success my-4 mx-auto">
-      <div class="container-fluid border border-info">
-        <div class="row flex-row border border-warning">
+      <div class="container-fluid gx-0 border border-info">
+        <div class="row flex-row border border-warning gx-0">
           <div class="col-md-4 d-flex flex-column contacts-sidebar border border-danger">
-            <div class="profile-navbar">
-              <div class="card">
-                <div class="card-body">
-                  This is some text within a card body.
+            <div class="header bg-white">
+              <div class="user-info">
+                <div class="user-img">
+                  <img class="dp" src="./img/avatar_io.jpg" alt="">
                 </div>
+                <div>
+                  <span class="main-user">Sofia</span>
+                </div>
+              </div>
+              <div class="nav-icons">
+                <li><i class="fa-solid fa-circle-notch"></i></li>
+                <li><i class="fa-solid fa-message"></i></li>
+                <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
               </div>
             </div>
             <div class="notifications-banner">
-              <div class="card">
-                <div class="card-body">
-                  This is some text within a card body.
-                </div>
+              <i class="fa-solid fa-bell-slash" style="color: #8edafc;"></i>
+              <div class="notifications-text">
+                <p>Ricevi notifiche di nuovi messaggi</p>
+                <a href="#">Attiva notifiche desktop</a>
               </div>
             </div>
-            <div class="contacts-search input-group">
-              <input type="text" class="form-control form-input" 
-                placeholder="&#128269; Cerca o inizia una nuova chat" aria-label="Cerca">
+            <div class="search-container">
+              <div class="input">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Cerca o inizia una nuova chat  ">
+              </div>
             </div>
-            <div class="contacts-list">
-              <div class="card">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">An item</li>
-                  <li class="list-group-item">A second item</li>
-                  <li class="list-group-item">A third item</li>
-                </ul>
+            <div class="contacts-list bg-white">
+              <div class="chat-box active">
+                <div class="img-box">
+                  <img class="img-cover" src="./img/avatar_1.jpg" alt="">
+                </div>
+                <div class="chat-details">
+                  <div class="text-head">
+                    <h4>Michele</h4>
+                    <p class="time">12:00</p>
+                  </div>
+                  <div class="text-message">
+                    <p>Ultimo messaggio inviato</p>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-box">
+                <div class="img-box">
+                  <img class="img-cover" src="./img/avatar_2.jpg" alt="">
+                </div>
+                <div class="chat-details">
+                  <div class="text-head">
+                    <h4>Fabio</h4>
+                    <p class="time">12:00</p>
+                  </div>
+                  <div class="text-message">
+                    <p>Ultimo messaggio inviato</p>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-box">
+                <div class="img-box">
+                  <img class="img-cover" src="./img/avatar_3.jpg" alt="">
+                </div>
+                <div class="chat-details">
+                  <div class="text-head">
+                    <h4>Samuele</h4>
+                    <p class="time">12:00</p>
+                  </div>
+                  <div class="text-message">
+                    <p>Ultimo messaggio inviato</p>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-box">
+                <div class="img-box">
+                  <img class="img-cover" src="./img/avatar_4.jpg" alt="">
+                </div>
+                <div class="chat-details">
+                  <div class="text-head">
+                    <h4>Alessandro B.</h4>
+                    <p class="time">12:00</p>
+                  </div>
+                  <div class="text-message">
+                    <p>Ultimo messaggio inviato</p>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-box">
+                <div class="img-box">
+                  <img class="img-cover" src="./img/avatar_5.jpg" alt="">
+                </div>
+                <div class="chat-details">
+                  <div class="text-head">
+                    <h4>Alessandro L.</h4>
+                    <p class="time">12:00</p>
+                  </div>
+                  <div class="text-message">
+                    <p>Ultimo messaggio inviato</p>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-box">
+                <div class="img-box">
+                  <img class="img-cover" src="./img/avatar_6.jpg" alt="">
+                </div>
+                <div class="chat-details">
+                  <div class="text-head">
+                    <h4>Claudia</h4>
+                    <p class="time">12:00</p>
+                  </div>
+                  <div class="text-message">
+                    <p>Ultimo messaggio inviato</p>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-box">
+                <div class="img-box">
+                  <img class="img-cover" src="./img/avatar_7.jpg" alt="">
+                </div>
+                <div class="chat-details">
+                  <div class="text-head">
+                    <h4>Federico</h4>
+                    <p class="time">12:00</p>
+                  </div>
+                  <div class="text-message">
+                    <p>Ultimo messaggio inviato</p>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-box">
+                <div class="img-box">
+                  <img class="img-cover" src="./img/avatar_8.jpg" alt="">
+                </div>
+                <div class="chat-details">
+                  <div class="text-head">
+                    <h4>Davide</h4>
+                    <p class="time">12:00</p>
+                  </div>
+                  <div class="text-message">
+                    <p>Ultimo messaggio inviato</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div class="col-md-8 d-flex flex-column conversation-viewport border border-danger">
-            <div class="conversation-navbar"></div>
-            <div class="conversation-container"></div>
-            <div class="conversation-message"></div>
+            <div class="conversation-navbar">
+              <div class="header bg-white">
+                <div class="user-info">
+                  <div class="user-img">
+                    <img class="dp" src="./img/avatar_1.jpg" alt="">
+                  </div>
+                  <div class="user-info-chat">
+                    <span class="user-info-chat-name">Michele</span>
+                    <span class="user-info-chat-access">Ultimo accesso oggi alle 12:00</span>
+                  </div>
+                </div>
+                <div class="nav-icons">
+                  <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                  <li><i class="fa-solid fa-paperclip"></i></li>
+                  <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                </div>
+              </div>
+            </div>
+            <div class="conversation-container">
+              <div class="message-div message-sent">
+                <p>Hai portato a spasso il cane?<br><span>15:30</span></p>
+              </div>
+              <div class="message-div message-sent">
+                <p>Ricordati di stendere i panni<br><span>15:50</span></p>
+              </div>
+              <div class="message-div message-received">
+                <p>Tutto fatto!<br><span>16:15</span></p>
+              </div>
+            </div>
+            <div class="conversation-message">
+              <div class="emoji">
+                <i class="fa-regular fa-face-grin"></i>
+              </div>
+              <input type="text" placeholder="Scrivi un messaggio">
+              <div class="vocal">
+                <i class="fa-solid fa-microphone"></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </main>
-  </div>
-
+  </div> 
   <!-- My JS file -->
   <script src="js/main.js"></script>
   <!-- Bootstrap JS file -->
