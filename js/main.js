@@ -197,7 +197,8 @@ const app = createApp({
         ],
         }
       ],
-      currentContact : null
+      currentContact : null,
+      searchFilter: "",
     }
   },
   methods: {
@@ -224,19 +225,30 @@ const app = createApp({
     },
     addNewMessage(){
       const newMessage = {
-        date: this.newMessage.date,
+        // tolocalestring mai visto, grazie internet
+        date: new Date().toLocaleString(),
         message: this.newMessage.message,
         status: 'sent',
       };
       this.currentContact.messages.push(newMessage);
+      
+      // reset messaggio scritto nella search bar dopo aver premuto invio.
+      this.newMessage.message = [];
+      
+      setTimeout(() => {
+        const automaticResponse = {
+          date: new Date().toLocaleString(),
+          message: 'oke',
+          status: 'received',
+        }
 
-      const automaticResponse = {
-        date: this.newMessage.date,
-        message: 'oke',
-        status: 'received',
-      }
-      this.currentContact.messages.push(automaticResponse);
+        this.currentContact.messages.push(automaticResponse);
+      }, 1000);
     },
+    // filteredContacts() {
+    //   const searchTerm = 
+
+    // },
   },
   beforeMount(){
     /* all'avvio della pagina, html cerca di accedere alla variabile currentContact,
@@ -249,6 +261,3 @@ const app = createApp({
   }
 }).mount("#app");
 
-// utilizzo invece una variabile utenteSelezionato.messages, .push, ecc...
-// fare un ulteriore ciclo for per stampare tutti i messaggi di single contact
-// nel container conversazione
