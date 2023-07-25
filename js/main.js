@@ -29,6 +29,11 @@ const { createApp } = Vue
 const app = createApp({
   data(){
     return {
+      newMessage: {
+        date: '25/07/2023 18:30:00',
+        message: '',
+        status: 'sent'
+      },
       contactsList: [
         {
         name: 'Michele',
@@ -216,6 +221,21 @@ const app = createApp({
     //Questo viene utilizzato per determinare quale classe CSS da applicare 
     // ai messaggi, a seconda del loro stato (sent o received).
       return status === 'sent' ? 'message-sent' : 'message-received';
+    },
+    addNewMessage(){
+      const newMessage = {
+        date: this.newMessage.date,
+        message: this.newMessage.message,
+        status: 'sent',
+      };
+      this.currentContact.messages.push(newMessage);
+
+      const automaticResponse = {
+        date: this.newMessage.date,
+        message: 'oke',
+        status: 'received',
+      }
+      this.currentContact.messages.push(automaticResponse);
     },
   },
   beforeMount(){
