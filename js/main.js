@@ -199,8 +199,16 @@ const app = createApp({
     getAvatarSrc(singleContact){
       return `${singleContact.avatar}`;
     },
+    /*
+    Una volta stampata la lista degli utenti, al click su un utente devo
+    mostrare i suoi messaggi nella lista di destra.
+    Se passo/salvo tutto l'oggetto del contatto cliccato e col 
+    selezionatore accedo al singolo elemento.
+    Per evitare di inserire ogni volta contactsList[indiceUtente].messages, ecc...
+    */
     onUserClick(singleContact){
       this.currentContact = singleContact;
+      // console.log(singleContact.messages);
     }
   },
   beforeMount(){
@@ -214,9 +222,6 @@ const app = createApp({
   }
 }).mount("#app");
 
-/* Una volta stampata la lista degli utenti, al click su un utente devo
-  mostrare i suoi messaggi nella lista di destra.
-  Mi serve:
-  - Indice per capire chi è l'utente che ho cliccato di cui mostrare i messaggi
-  - Se salvo tutto l'oggetto del contatto cliccato e col selezionatore accedo al singolo elemento
-*/
+// utilizzo invece una variabile utenteSelezionato.messages, .push, ecc...
+// fare un ulteriore ciclo for per stampare tutti i messaggi di single contact
+// nel container conversazione

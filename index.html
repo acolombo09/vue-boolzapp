@@ -61,6 +61,7 @@
             <div class="contacts-list bg-white">
               <div class="chat-box d-flex align-items-center"
                 v-for="contact in contactsList"
+                :key="contact.name"
                 @click="onUserClick(contact)">
                 <div class="img-box">
                   <!-- v-bind:src="`./img/avatar${contact.avatar}.jpg`" -->
@@ -86,11 +87,11 @@
             <div class="conversation-navbar">
               <div class="header bg-white">
                 <div class="user-info">
-                  <div class="user-img">
-                    <img class="dp" src="./img/avatar_1.jpg" alt="">
+                  <div class="user-img" v-if="currentContact">
+                    <img class="dp" alt="" v-bind:src="getAvatarSrc(currentContact)">
                   </div>
                   <div class="user-info-chat">
-                    <span class="user-info-chat-name">Michele</span>
+                    <span class="user-info-chat-name">{{currentContact.name}}</span>
                     <span class="user-info-chat-access">Ultimo accesso oggi alle 12:00</span>
                   </div>
                 </div>
@@ -103,22 +104,18 @@
             </div>
             <!-- container chat in utilizzo -->
             <div class="conversation-container">
-              <div class="message-div message-sent">
-                <div class="message-parameters d-flex flex-column">
-                  <p class="message-text mb-0">Hai portato a spasso il cane?</p>
-                  <p class="message-time mb-0">15:30</p>
+              <div class="message-div message-sent" v-if="currentContact">
+                <div class="message-parameters d-flex flex-column" 
+                v-for="message in currentContact.messages" :key="message.date">
+                  <p class="message-text mb-0">{{ message.message }}</p>
+                  <p class="message-time mb-0">{{ message.date }}</p>
                 </div>
               </div>
-              <div class="message-div message-sent">
-                <div class="message-parameters d-flex flex-column">
-                  <p class="message-text mb-0">Ricordati di stendere i panni</p>
-                  <p class="message-time mb-0">15:50</p>
-                </div>
-              </div>
-              <div class="message-div message-received">
-                <div class="message-parameters d-flex flex-column">
-                  <p class="message-text mb-0">Tutto fatto!</p>
-                  <p class="message-time mb-0">16:15</p>
+              <div class="message-div message-received" v-if="currentContact">
+                <div class="message-parameters d-flex flex-column"
+                v-for="message in currentContact.messages" :key="message.date">
+                  <p class="message-text mb-0">{{ message.message }}</p>
+                  <p class="message-time mb-0">{{ message.date }}</p>
                 </div>
               </div>
             </div>
