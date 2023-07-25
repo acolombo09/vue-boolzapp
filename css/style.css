@@ -174,10 +174,6 @@ img {
   object-fit: cover;
 }
 
-.contacts-list .active {
-  background: #ebebeb;
-}
-
 .contacts-list .chat-box:hover {
   background: #e9ebeb;
 }
@@ -200,15 +196,18 @@ img {
 }
 
 .message-div {
-  display: flex;
   width: 100%;
   margin: 9px 0;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .message-parameters{
   width: 30%;
   padding: .5rem;
   border-radius: 10px;
+  align-self: flex-end;
+  margin-bottom: .5rem;
 }
 
 .message-text {
@@ -223,20 +222,19 @@ img {
 }
 
 .message-sent {
+  display: flex;
+  flex-direction: column;
   justify-content: flex-end;
-}
-
-.message-sent > * {
   background: #dcf8c6;
-}
-
-.message-received > * {
-  background: #ffffff;
+  align-self: flex-end;
 }
 
 .message-received {
+  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
-
+  background: #ffffff;
+  align-self: flex-start;
 }
 
 .conversation-message {

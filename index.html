@@ -104,16 +104,10 @@
             </div>
             <!-- container chat in utilizzo -->
             <div class="conversation-container">
-              <div class="message-div message-sent" v-if="currentContact">
-                <div class="message-parameters d-flex flex-column" 
-                v-for="message in currentContact.messages" :key="message.date">
-                  <p class="message-text mb-0">{{ message.message }}</p>
-                  <p class="message-time mb-0">{{ message.date }}</p>
-                </div>
-              </div>
-              <div class="message-div message-received" v-if="currentContact">
-                <div class="message-parameters d-flex flex-column"
-                v-for="message in currentContact.messages" :key="message.date">
+              <div class="message-div flex-column" v-if="currentContact">
+                <div class="message-parameters" 
+                v-for="(message, status) in currentContact.messages" :key="message.date"
+                v-bind:class="getMessageClass(message.status)">
                   <p class="message-text mb-0">{{ message.message }}</p>
                   <p class="message-time mb-0">{{ message.date }}</p>
                 </div>

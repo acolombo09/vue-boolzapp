@@ -209,7 +209,14 @@ const app = createApp({
     onUserClick(singleContact){
       this.currentContact = singleContact;
       // console.log(singleContact.messages);
-    }
+    },
+    getMessageClass(status) {
+    // La funzione restituisce la classe "sent" se lo stato è "sent",
+    // altrimenti restituisce la classe "received" se lo stato è "received".
+    //Questo viene utilizzato per determinare quale classe CSS da applicare 
+    // ai messaggi, a seconda del loro stato (sent o received).
+      return status === 'sent' ? 'message-sent' : 'message-received';
+    },
   },
   beforeMount(){
     /* all'avvio della pagina, html cerca di accedere alla variabile currentContact,
