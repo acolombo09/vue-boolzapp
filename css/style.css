@@ -1,6 +1,7 @@
 body{
   position: relative;
   background-image: url(../img/bgy.png);
+  height: 100vh;
 }
 
 main{
@@ -8,15 +9,7 @@ main{
   height: 100%;
 }
 
-.container-fluid{
-  height: 100%;
-}
-
-.contacts-sidebar{
-  max-height: 100%;
-}
-
-.conversation-viewport{
+.container-fluid, .contacts-sidebar, .conversation-viewport{
   max-height: 100%;
 }
 
@@ -74,12 +67,6 @@ main{
   cursor: pointer;
 }
 
-.nav-icons {
-  display:flex;
-  justify-content: flex-end;
-  padding-left: 110px;
-}
-
 .nav-icons li {
   list-style: none;
   display: flex;
@@ -90,11 +77,9 @@ main{
 }
 
 .notifications-banner{
-  display: flex;
   width: 100%;
   height: 70px;
   background: #76daff;
-  align-items: center;
   padding-left: .6rem;
 }
 
@@ -133,14 +118,12 @@ main{
   justify-content: center;
 }
 
-.search-container .input{
+.search-container .input {
   width: calc(100% - 1rem);
 }
 
 .contacts-list .chat-box {
   width: 100%;
-  display:flex;
-  align-items:center;
   cursor: pointer;
   padding: .5rem;
   border-bottom: 1px solid #e9ebeb;
@@ -159,7 +142,7 @@ main{
 }
 
 .contacts-list .chat-box .chat-details .text-head {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
@@ -167,13 +150,11 @@ main{
 .contacts-list .chat-box .chat-details .text-head h4 {
   font-size: .9rem;
   color: #000;
-  margin-bottom: 0;
 }
 
 .contacts-list .chat-box .chat-details .text-head .time {
-  font-size: 0.8em;
+  font-size: 0.8rem;
   color: #c6c9cb;
-  margin-bottom: 0;
 }
 
 .contacts-list .chat-box .chat-details .text-message {
@@ -184,7 +165,7 @@ main{
 
 .contacts-list .chat-box .chat-details .text-message p {
   color: #c6c9cb;
-  font-size: 0.9em;
+  font-size: 0.9rem;
   font-weight: 400;
 }
 
@@ -225,8 +206,6 @@ img {
 }
 
 .message-parameters{
-  display: flex;
-  flex-direction: column;
   width: 30%;
   padding: .5rem;
   border-radius: 10px;
@@ -235,14 +214,12 @@ img {
 .message-text {
   text-align: left;
   font-size: 0.9rem;
-  margin-bottom: 0;
 }
 
 .message-time {
   font-size: 0.6rem;
   opacity: 0.5;
   text-align: right;
-  margin-bottom: 0;
 }
 
 .message-sent {
@@ -290,6 +267,6 @@ img {
   padding: 10px 20px;
   border-radius:10px;
   font-size: .8rem;
-  border:none;
-  outline:none;
+  border: none;
+  outline: none;
 }
