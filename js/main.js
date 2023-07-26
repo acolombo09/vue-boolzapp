@@ -241,14 +241,18 @@ const app = createApp({
           message: 'oke',
           status: 'received',
         }
-
         this.currentContact.messages.push(automaticResponse);
       }, 1000);
-    },
-    // filteredContacts() {
-    //   const searchTerm = 
 
-    // },
+      // fatto a lezione con Florian, serve per far scrollare automaticamente il container all'ultimo messaggio inviato.
+      // questa proprietà va data ovviamente al container che ha l'overflow.
+      // Appena vue finisce di aggiornare l'html, esegue subito questa funzione.
+      // oppure si può usare un timeout con setTimeout a 0 ms.
+      this.$nextTick(() => {
+        this.$refs.msgsContainer.scrollTop = this.$refs.msgsContainer.scrollHeight
+      });
+      
+    },
   },
   beforeMount(){
     /* all'avvio della pagina, html cerca di accedere alla variabile currentContact,
@@ -258,6 +262,13 @@ const app = createApp({
       In questo modo visualizzo sempre il primo utente della lista.
     */
     this.currentContact = this.contactsList[0];
+  },
+  computed: {
+    filteredContacts() {
+        return this.contactsList.filter(contact => {
+        return contact.name.toLowerCase().includes(this.searchFilter.toLowerCase())
+      });
+    },
   }
 }).mount("#app");
 

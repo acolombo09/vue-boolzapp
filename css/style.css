@@ -26,6 +26,7 @@ main{
   position: relative;
   width: 100%;
   padding: 2rem 4rem;
+  max-height: 720px;
 }
 
 .header {

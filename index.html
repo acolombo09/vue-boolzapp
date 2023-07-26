@@ -63,12 +63,15 @@
               <div class="chat-box d-flex align-items-center"
                 v-for="contact in contactsList"
                 :key="contact.name"
-                @click="onUserClick(contact)">
+                @click="onUserClick(contact)"
+                v-for="contact in filteredContacts"
+                :key="contact.name">
                 <div class="img-box">
                   <!-- v-bind:src="`./img/avatar${contact.avatar}.jpg`" -->
                   <!-- src="./img/avatar_1.jpg" -->
                   <img class="img-cover" alt="" 
-                  v-bind:src="getAvatarSrc(contact)">
+                  v-bind:src="getAvatarSrc(contact)"
+                  v-bind:src="filteredContacts(contact)">
                 </div>
                 <div class="chat-details">
                   <div class="text-head">
@@ -104,7 +107,7 @@
               </div>
             </div>
             <!-- container chat in utilizzo -->
-            <div class="conversation-container">
+            <div class="conversation-container" ref="msgsContainer">
               <div class="message-div flex-column" v-if="currentContact">
                 <div class="message-parameters" 
                 v-for="(message, status) in currentContact.messages" :key="message.date"
