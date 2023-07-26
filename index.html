@@ -61,17 +61,14 @@
             <!-- chat list -->
             <div class="contacts-list bg-white">
               <div class="chat-box d-flex align-items-center"
-                v-for="contact in contactsList"
-                :key="contact.name"
-                @click="onUserClick(contact)"
                 v-for="contact in filteredContacts"
-                :key="contact.name">
+                :key="contact.name"
+                @click="onUserClick(contact)">
                 <div class="img-box">
                   <!-- v-bind:src="`./img/avatar${contact.avatar}.jpg`" -->
                   <!-- src="./img/avatar_1.jpg" -->
                   <img class="img-cover" alt="" 
-                  v-bind:src="getAvatarSrc(contact)"
-                  v-bind:src="filteredContacts(contact)">
+                  v-bind:src="getAvatarSrc(contact)">
                 </div>
                 <div class="chat-details">
                   <div class="text-head">

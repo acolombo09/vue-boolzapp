@@ -265,9 +265,20 @@ const app = createApp({
   },
   computed: {
     filteredContacts() {
-        return this.contactsList.filter(contact => {
-        return contact.name.toLowerCase().includes(this.searchFilter.toLowerCase())
-      });
+      // Rimuove gli spazi bianchi all'inizio e alla fine della stringa (trim trovato online)
+      let searchTerm = this.searchFilter.trim();
+      // Prima di applicare il filtro, imposto una condizione per far sì che la lista venga filtrata
+      // solo se digito nella search bar, altrimenti rimane tutto invariato.
+      if (searchTerm === "") {
+        // Se il filtro di ricerca è vuoto o contiene solo spazi bianchi, restituisce tutti i contatti
+        return this.contactsList;
+      } else {
+        // Altrimenti, applica il filtro di ricerca e restituisce solo i contatti filtrati
+        // stampati dall'array ricavato dal v-for.
+        return this.contactsList.filter(contact =>
+          contact.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      }
     },
   }
 }).mount("#app");
